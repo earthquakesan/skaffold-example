@@ -1,0 +1,14 @@
+apiVersion: skaffold/v4beta1
+kind: Config
+metadata:
+  name: skaffold-example
+build:
+  artifacts:
+  - image: earthquakesan/gin-ping
+    docker:
+      dockerfile: Dockerfile
+deploy:
+  kubectl: {}
+manifests:
+  rawYaml:
+  - deploy/gin-ping-deployment.yaml

@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: gin-ping
+  name: gin-ping
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: gin-ping
+  template:
+    metadata:
+      labels:
+        app: gin-ping
+    spec:
+      containers:
+      - image: earthquakesan/gin-ping:d779dc7-dirty
+        name: gin-ping
